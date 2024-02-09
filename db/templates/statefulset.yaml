@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Release.Name }}-postgres
+  namespace: {{.Values.namespace}}
+spec:
+  serviceName: "{{ .Release.Name }}-postgres"
+  replicas: {{.Values.replicaCount}}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-postgres
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-postgres
+    spec:
+     # hostNetwork: false
+      dnsConfig:
+        searches:
+          - db-postgres-service.db.svc.cluster.local
+      containers:
+      - name: {{.Values.image.repository}}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        env:
+        - name: {{.Values.enviromentVariables.databaseNameVariable|quote}}
+          value: {{.Values.enviromentVariables.databaseNameValue|quote}}
+        - name: {{.Values.enviromentVariables.databaseUserVariable|quote}}
+          value: {{.Values.enviromentVariables.databaseUserValue|quote}}
+        - name: {{.Values.enviromentVariables.databasePasswordVariable|quote}}
+          value: "password"
+        ports:
+        - containerPort: {{.Values.enviromentVariables.databasePortValue}}
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      storageClassName: standard
+      resources:
+        requests:
+          storage: 1Gi

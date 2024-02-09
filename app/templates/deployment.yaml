@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-test-deployment
+  namespace: {{.Values.namespace}}
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "app.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "app.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+       {{- with .Values.volumes }}
+      volumes:
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      imagePullSecrets:
+          - name: app-secr
+      containers: 
+        - name: {{ .Release.Name }}-test-container
+          image: {{ .Values.image.repository }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          - name:  {{.Values.enviromentVariables.databaseNameVariable|quote}}
+            value: {{.Values.postgres.postgresDb|quote}}
+          - name:  {{.Values.enviromentVariables.databasePasswordVariable|quote}}
+            value: {{.Values.postgres.postgresPassword|quote}}
+          - name:  {{.Values.enviromentVariables.databaseUserVariable|quote}}
+            value: {{.Values.postgres.postgresUsername|quote}}
+          - name:  {{.Values.enviromentVariables.databasePortVartiable|quote}}
+            value: {{.Values.postgres.postgresPort|quote}}
+          - name:  {{.Values.enviromentVariables.databaseHostVariable|quote}}
+            value: {{.Values.postgres.postgresHost|quote}}
+          ports:
+            - name: http
+              containerPort: {{.Values.service.port}}
+              protocol: TCP
+              hostPort: {{.Values.service.port}}
+          volumeMounts:
+            - name: email-config-volume
+              mountPath: /app/data/mail.txt
+              subPath: mail.txt
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+
+          {{- with .Values.nodeSelector }}
+          nodeSelector:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}
+          {{- with .Values.affinity }}
+          affinity:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}
+          {{- with .Values.tolerations }}
+          tolerations:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}

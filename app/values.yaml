@@ -1,0 +1,141 @@
+# Default values for app.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+namespace: app
+replicaCount: 1
+enviromentVariables:
+  databaseNameVariable: POSTGRES_DB
+  databasePortVartiable: POSTGRES_PORT
+  databaseUserVariable: POSTGRES_USER
+  databasePasswordVariable: POSTGRES_PASSWORD
+  databaseHostVariable: POSTGRES_HOST
+postgres:
+  enabled: true
+  image:
+    repository: postgres
+    tag: 14-alpine
+    pullPolicy: IfNotPresent
+  postgresDb: app-test-db
+  postgresPort: 5432
+  postgresUsername: root
+  postgresPassword: "password" 
+  postgresHost: db-postgres-service.db.svc.cluster.local
+  service:
+    type: None
+    port: 5432
+image:
+  repository: system.registry.eneci.net/app-test
+  pullPolicy: IfNotPresent
+  tag: ""
+  env:
+   username: Username
+   password: Password
+   server: system.registry.eneci.net
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: "" 
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Automatically mount a ServiceAccount's API credentials?
+  automount: false
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: "app-test"
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: NodePort
+  port: 8080
+  
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations: 
+     kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  serviceName: app-test-service
+  hosts:
+    - host: data354.app.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+  initialDelaySeconds: 15
+  periodSeconds: 10
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
+  initialDelaySeconds: 15
+  periodSeconds: 10     
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+# Additional volumes on the output Deployment definition.
+volumes:
+- name: email-config-volume
+  configMap:
+   name:  email-config
+
+#volumes: []
+# - name: foo
+#   secret:
+#     secretName: mysecret
+#     optional: false
+
+# Additional volumeMounts on the output Deployment definition.
+volumeMounts: 
+- name: email-config-volume
+  mountPath: /app/data/email.txt
+  subPath: email.txt
+  readOnly: false
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
