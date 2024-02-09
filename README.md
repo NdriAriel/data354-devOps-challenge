@@ -33,4 +33,4 @@ To get a local development environment up and running, follow these steps:
 
 # data354-devOps-challenge
 
-![Alt text](image.png)
+![apiResponse](image.png)
