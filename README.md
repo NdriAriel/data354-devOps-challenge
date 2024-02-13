@@ -16,16 +16,17 @@
  2. Create the different namespaces (**app**,**db**)
  3. Create the diferents manifests (Deployment for app-test in app namespace and Statefulset for the database in db namespace)
  4. Update the file **/app/data/email.txt** inside the app Pod container with a custom email (for example: <example@gmail.com>)
- 5. Retrive the validations codes by a **POST** request on **/codes** with required credential specified in the header as
+ 5. Retrieve the validations codes by a **POST** request on **/codes** with required credential specified in the header as
    {Apikey: <example@gmail.com>}
   
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 
-- [Minikube](https://minikube.sigs.k8s.io/docs/start/) installed and configured
-- [Helm](https://helm.sh/docs/intro/install/) installed and initialized
-- Docker installed (if you are building custom Docker images)
+- [Minikube](https://minikube.sigs.k8s.io/docs/start/) installed
+- [Helm](https://helm.sh/docs/intro/install/) installed
+- Docker installed [docker](https://docs.docker.com/engine/install/)
+- kubectl [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) installed
 
 ## Getting Started
 
