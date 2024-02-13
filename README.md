@@ -6,7 +6,9 @@
 
 ## Description
 
- lorem
+ The application must communicate with a Postgres database as described in the architecture.
+ The goal of this project is to retrieve the validations codes that are migrated from the app-test to the database.
+ The codes can only be retrieved by POST request on the endpoint  ```bash  /codes.
 
 ## Prerequisites
 
