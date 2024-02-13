@@ -8,8 +8,16 @@
 
  The application must communicate with a Postgres database as described in the architecture.
  The goal of this project is to retrieve the validations codes that are migrated from the app-test to the database.
- The codes can only be retrieved by POST request on the endpoint  ```bash  /codes.
+ The codes can only be retrieved by **POST** request on the endpoint **/codes**.
+ Tasks:
 
+ 1. Deploy a Kubernetes cluster
+ 2. Create the different namespaces (**app**,**db**)
+ 3. Create the diferents manifests (Deployment for app-test in app namespace and Statefulset for the database in db namespace)
+ 4. Update the file **/app/mail.txt** inside the app Pod container with a custom email (for example: <example@gmail.com>)
+ 5. Retrive the validations codes by a **POST** request on **/codes** with required credential specified in the header as
+   {Apikey: <example@gmail.com>}
+  
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
