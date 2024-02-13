@@ -24,7 +24,7 @@
 Before you begin, ensure you have met the following requirements:
 
 - [Minikube](https://minikube.sigs.k8s.io/docs/start/) installed
-- [Helm](https://helm.sh/docs/intro/install/) installed
+- [Helm](https://helm.sh/docs/intro/install/) installed and initialized
 - Docker installed [docker](https://docs.docker.com/engine/install/)
 - kubectl [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) installed
 
