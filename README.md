@@ -14,7 +14,7 @@
  1. Deploy a Kubernetes cluster
  2. Create the different namespaces (**app**,**db**)
  3. Create the diferents manifests (Deployment for app-test in app namespace and Statefulset for the database in db namespace)
- 4. Update the file **/app/mail.txt** inside the app Pod container with a custom email (for example: <example@gmail.com>)
+ 4. Update the file **/app/data/email.txt** inside the app Pod container with a custom email (for example: <example@gmail.com>)
  5. Retrive the validations codes by a **POST** request on **/codes** with required credential specified in the header as
    {Apikey: <example@gmail.com>}
   
