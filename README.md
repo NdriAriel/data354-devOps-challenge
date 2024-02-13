@@ -1,17 +1,11 @@
 # data354-devOps-challenge
 
-1. Architecture
+1. ##  Architecture
 ![Architecture](images/image-11.png)
-2. Description
- lorem
 
-## Table of Contents
+2. ## Description
 
-- [data354-devOps-challenge](#data354-devops-challenge)
-  - [Table of Contents](#table-of-contents)
-  - [Prerequisites](#prerequisites)
-  - [Getting Started](#getting-started)
-    - [Installation](#installation)
+ lorem 
 
 ## Prerequisites
 
