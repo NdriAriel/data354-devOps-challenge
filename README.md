@@ -1,6 +1,9 @@
 # data354-devOps-challenge
 
-Short description of the project.
+1. Architecture
+![Architecture](images/image-11.png)
+2. Description
+ lorem
 
 ## Table of Contents
 
@@ -27,8 +30,8 @@ To get a local development environment up and running, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your/repository.git
-   cd repository
+   git clone https://github.com/NdriAriel/data354-devOps-challenge.git
+   cd data354-devOps-challenge
 
 ![apiResponse](images/image.png)
 
@@ -49,5 +52,3 @@ To get a local development environment up and running, follow these steps:
 ![Alt text](images/image-9.png)
 
 ![Alt text](images/image-10.png)
-
-![Alt text](images/image-11.png)
