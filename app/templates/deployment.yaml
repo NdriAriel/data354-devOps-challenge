@@ -49,7 +49,7 @@ spec:
             - name: http
               containerPort: {{.Values.service.port}}
               protocol: TCP
-              hostPort: {{.Values.service.port}}
+              #hostPort: {{.Values.service.port}}
           volumeMounts:
             - name: email-config-volume
               mountPath: /app/data/mail.txt
