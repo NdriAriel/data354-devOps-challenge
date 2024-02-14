@@ -57,10 +57,17 @@ Before you begin, ensure you have met the following requirements:
 
 3. ### app-test and deployment using respectively Deployment and Statefulset
 
-  In order to build a shareable  and scalable yaml file code we adopt Helm, one the famous kubernetes package manager.
+  In order to build a shareable  and scalable yaml file code we adopted Helm, a package manager for kubernetes project.
   we generated two Helm chart each one of our apps (**app** and **db** )
+  ```bash
+  #create helm chart for db manifest
+  helm create db ./ --namespace=db
 
-## Getting Started
+  #create helm chart for app manifest
+  helm create app ./ --namespace=app
+  ```
+
+## Getting Started 
 
 To get a local development environment up and running, follow these steps:
 
