@@ -31,9 +31,9 @@ Before you begin, ensure you have met the following requirements:
 ## Results
 
  1. Creating kubernets cluster from local environment.
-
-#### After installing the required softwares for this project, we generated a kubernetes cluster by running this command
-
+  <space></space>
+  In order to deploy a local kubernetes cluster we use minikube which a developer friendly tool to build and deploy  local Kubernetes cluster. The command below sets up a local Kubernetes cluster on macOS, Linux, and Windows.
+  
   ```bash
 # you should specify the driver in case you're using a diferent driver than Docker.
  minikube start 
@@ -49,6 +49,7 @@ Before you begin, ensure you have met the following requirements:
    kubectl create namespace app
    kubectl create namespace db
    ```
+
 #### **The output should look like**
 
 ![app](images/image-8.png)
