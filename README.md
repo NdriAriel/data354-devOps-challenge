@@ -30,18 +30,29 @@ Before you begin, ensure you have met the following requirements:
 
 ## Results
 
- 1. Steps of creating kubernets cluster from local environment.
+ 1. Creating kubernets cluster from local environment.
 
-#### After installing the required software for this project, we generate a kubernetes cluster by running this command
+#### After installing the required softwares for this project, we generated a kubernetes cluster by running this command
 
   ```bash
 # you should specify the driver in case you're using a diferent driver than Docker.
  minikube start 
  ```
 
-#### **output should look like**
+#### **The output should look like**
 
  ![Alt text](images/image-7.png)
+
+ 2. Creating namespaces (**app** and **db**)
+
+   ```bash
+   kubectl create namespace app
+   kubectl create namespace db
+   ```
+#### **The output should look like**
+
+![app](images/image-8.png)
+![db](images/image-8.png)
 
 ## Getting Started
 
@@ -66,8 +77,6 @@ To get a local development environment up and running, follow these steps:
 ![Alt text](images/image-5.png)
 
 ![Alt text](images/image-6.png)
-
-![Alt text](images/image-8.png)
 
 ![Alt text](images/image-9.png)
 
