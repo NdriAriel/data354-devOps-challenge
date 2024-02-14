@@ -204,3 +204,23 @@ To run the cluster localy from your computer you should follow these steps:
    helm install db ./db -n db
 
    ```
+
+5. Accessing the app
+
+#### first method
+
+  ```bash
+   minikube serive app-test-service -n app --url 
+  ```
+
+  now you can access the app from the generated <url>
+
+#### second method
+
+  Append **127.0.0.1 data354.app.local** in your /etc/hosts file from  your computer and run the following command.
+  
+  ```bash
+  minikube tunnel
+  ```
+
+  after that you should be able to request the app from <http://data354.app.local>
