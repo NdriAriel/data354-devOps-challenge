@@ -30,13 +30,13 @@ spec:
         ports:
         - containerPort: {{.Values.enviromentVariables.databasePortValue}}
   volumeClaimTemplates:
-  metadata:
-    name: data 
-  spec:
-    accessModes:
-      - ReadWriteOnce
-    storageClassName: standard
-    resources:
-      requests:
-        storage: 1Gi
-       
+    metadata:
+      name: data 
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      storageClassName: standard
+      resources:
+        requests:
+          storage: 1Gi
+        
