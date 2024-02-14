@@ -227,3 +227,9 @@ To run the cluster localy from your computer you should follow these steps:
 
 ## minikube dashboard ui screenshots
 
+ 1. app-test container
+   ![apptestcontainer](images/imagec.png)
+ 2. app  Pod state
+  ![AppPod](images/imagep.png)
+3. db Pod state
+   ![dbPod](images/imagedbpod.png)
