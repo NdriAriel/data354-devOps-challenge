@@ -89,7 +89,7 @@ default helm chart code structure
 
 ![secret](images/image-10.png)
 
-We updated the default helm chart in both app folder and db folder deployed the manifests using:
+We updated the default helm chart in both app folder and db folder and deployed the manifests using:
 ```bash 
 #from the root directory of our repository we run. 
 
@@ -101,7 +101,21 @@ helm install db ./db --namespace=db
 helm install app ./app --namespace=app
 
 ```
+### **outputs**
+![app deployed](images/imageapd.png)
+![db deployed](images/imaged.png)
 
+list all charts in app namespace 
+```bash
+helm list --namespace=app
+```
+![appList](images/imageapplist.png)
+
+list all charts in db namespace
+```bash
+helm list --namespace=db
+```
+ ![dbList](images/imagedblist.png)
 ## Getting Started
 
 To get a local development environment up and running, follow these steps:
