@@ -213,7 +213,7 @@ To run the cluster localy from your computer you should follow these steps:
    minikube serive app-test-service -n app --url 
   ```
 
-  now you can access the app from the generated <url>
+  now you can access the app from the generated **url**
 
 #### second method
 
