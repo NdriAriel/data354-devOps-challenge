@@ -28,7 +28,7 @@ Before you begin, ensure you have met the following requirements:
 - Docker installed [docker](https://docs.docker.com/engine/install/)
 - kubectl [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) installed
 
-## Results
+## Tasks execution
 
 1. ### Creating kubernets cluster from local environment
   
@@ -50,12 +50,10 @@ Before you begin, ensure you have met the following requirements:
    kubectl create namespace db
    ```
 
-#### **The output should look like**
-
 ![app](images/image-8.png)
 ![db](images/image-9.png)
 
-3. ### app-test and deployment using respectively Deployment and Statefulset
+1. ### app-test and deployment using respectively Deployment and Statefulset
 
   In order to build a shareable  and scalable yaml file code we adopted Helm, a package manager for kubernetes project.
   we generated two Helm chart each one of our apps (**app** and **db** )
@@ -67,8 +65,6 @@ Before you begin, ensure you have met the following requirements:
   #create helm chart for app manifest
   helm create app --namespace=app
   ```
-
-### **output**
 
  app chart creating
 ![appchart](images/imageapp.png)
@@ -85,11 +81,9 @@ default helm chart code structure
  
    ```
 
-### output
-
 ![secret](images/image-10.png)
 
-2. ### method used to update **/app/data/mail.txt** file inside the container
+1. ### method used to update **/app/data/mail.txt** file inside the container
 
    We mounted a volume from the host machine to the container virtual machine by creating a kubernetes configMap component in the app chart. here the sample code used.
    <code>
@@ -121,8 +115,6 @@ helm install app ./app --namespace=app
 
 ```
 
-### **outputs**
-
 ![app deployed](images/imageapd.png)
 ![db deployed](images/imaged.png)
 
@@ -141,7 +133,8 @@ helm list --namespace=db
 ```
 
  ![dbList](images/imagedblist.png)
- 4.  Accessing the app from host machine
+
+ 1. Accessing the app from host machine
 
 #### method 1:  invoking the service of the app-test pod using minikube
 
@@ -203,7 +196,7 @@ To run the cluster localy from your computer you should follow these steps:
 
  ```
 
- 4. deploying apps
+ 4. deployments
 
    ```bash
    #from the root of the repo run:
