@@ -30,8 +30,8 @@ Before you begin, ensure you have met the following requirements:
 
 ## Results
 
- 1. Creating kubernets cluster from local environment.
-  <space></space>
+ 1. Creating kubernets cluster from local environment.\
+  
   In order to deploy a local kubernetes cluster we use minikube which a developer friendly tool to build and deploy  local Kubernetes cluster. The command below sets up a local Kubernetes cluster on macOS, Linux, and Windows.
   
   ```bash
