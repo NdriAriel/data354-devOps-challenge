@@ -163,8 +163,18 @@ we can access the app through the generate url <http://127.0.0.1:42633>.
    #run this command 
    minikube tunnel 
    ```
+
 ![tunnel](images/imagetunnel.png)
 We can now access the app through the url : <http://data354.app.local>
+5. code retrieving request on **/codes**
+
+#### method 1
+
+ ![method1](images/image1.png)
+
+#### method  2
+
+![method2](images/image2.png)
 
 ## Getting Started
 
