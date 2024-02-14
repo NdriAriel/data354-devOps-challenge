@@ -141,13 +141,23 @@ helm list --namespace=db
 ```
 
  ![dbList](images/imagedblist.png)
- 4. ### Accessing the app from host machine
-   #### method 1
-   ```bash 
+ 4.  Accessing the app from host machine
+
+#### method 1:  invoking the service of the app-test pod using minikube
+
+   ```bash
+   #run this command 
+   minikube service app-test-service -n app --url
+```
+
+![Apptest](images/imageapptest.png)
+
+#### method 2:  invoking the service through an ingress component of the app-test pod using minikube
+
+   ```bash
    #run this command 
    minikube service app-test-service -n app --url 
    ```
-![Apptest](images/imageapptest.png)
 
 ## Getting Started
 
