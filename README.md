@@ -202,3 +202,12 @@ To run the cluster localy from your computer you should follow these steps:
  kubectl create namespace app
 
  ```
+
+ 4. deploying apps
+
+   ```bash
+   #from the root of the repo run:
+   helm install app ./app -n app
+   helm install db ./db -n db
+
+   ```
