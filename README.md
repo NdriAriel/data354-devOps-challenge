@@ -159,7 +159,8 @@ we can access the app through the generate url <http://127.0.0.1:42633>.
 
 ![tunnel](images/imagetunnel.png)
 We can now access the app through the url : <http://data354.app.local>
-5. code retrieving request on **/codes**
+
+5. ### code retrieving request on **/codes**
 
 #### method 1
 
@@ -231,5 +232,5 @@ To run the cluster localy from your computer you should follow these steps:
    ![apptestcontainer](images/imagec.png)
  2. app  Pod state
   ![AppPod](images/imagep.png)
-3. db Pod state
+ 3. db Pod state
    ![dbPod](images/imagedbpod.png)
