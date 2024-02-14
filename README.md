@@ -68,7 +68,8 @@ Before you begin, ensure you have met the following requirements:
   helm create app --namespace=app
   ```
 
- **output**
+### **output**
+
  app chart creating
 ![appchart](images/imageapp.png)
  db chart creating
@@ -77,13 +78,29 @@ Before you begin, ensure you have met the following requirements:
 default helm chart code structure
 ![codetree](images/imagetree.png)
 
-1. ### crating secret to pull contianer image from private repository  
+1. ### creating secret to pull contianer image from private repository  
 
    ```bash
    kubectl create secret docker-registry app-secret --docker-username=<yourUsername> --docker-password=<yourPassword> --docker-server=https://<serverDomain> --namespace=app
  
    ```
+
+### output
+
 ![secret](images/image-10.png)
+
+We updated the default helm chart in both app folder and db folder deployed the manifests using:
+```bash 
+#from the root directory of our repository we run. 
+
+#deploying db statefulset with its service component 
+helm install db ./db --namespace=db
+
+#deploying app-test Deployment with its service and ingress components
+
+helm install app ./app --namespace=app
+
+```
 
 ## Getting Started
 
