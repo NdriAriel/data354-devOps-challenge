@@ -104,6 +104,8 @@ default helm chart code structure
       {{ (tpl (.Files.Glob "secrets/mail.txt").AsConfig . ) | indent 2 }} # generate configMap from a file.
 
 </code>
+  
+  3. Deployments
 
 We updated the default helm chart in both app folder and db folder and deployed the manifests using:
 
@@ -139,6 +141,13 @@ helm list --namespace=db
 ```
 
  ![dbList](images/imagedblist.png)
+ 4. ### Accessing the app from host machine
+   #### method 1
+   ```bash 
+   #run this command 
+   minikube service app-test-service -n app --url 
+   ```
+![Apptest](images/imageapptest.png)
 
 ## Getting Started
 
