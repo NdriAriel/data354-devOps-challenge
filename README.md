@@ -28,6 +28,22 @@ Before you begin, ensure you have met the following requirements:
 - Docker installed [docker](https://docs.docker.com/engine/install/)
 - kubectl [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) installed
 
+## Results
+
+ 1. Steps of creating kubernets cluster from local environment.
+After installing the required software for this project, we generate a kubernetes cluster by running this command:
+
+  ```bash
+# you should specify the driver in case you using a diferent driver than Docker.
+ minikube start 
+ ```
+
+#### **output should look like**
+
+ ![Alt text](images/image-7.png)
+
+![minikube:start](images/image-7.png)
+
 ## Getting Started
 
 To get a local development environment up and running, follow these steps:
@@ -51,8 +67,6 @@ To get a local development environment up and running, follow these steps:
 ![Alt text](images/image-5.png)
 
 ![Alt text](images/image-6.png)
-
-![Alt text](images/image-7.png)
 
 ![Alt text](images/image-8.png)
 
