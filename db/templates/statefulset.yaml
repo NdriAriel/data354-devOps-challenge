@@ -29,14 +29,14 @@ spec:
           value: "password"
         ports:
         - containerPort: {{.Values.enviromentVariables.databasePortValue}}
-  volumeClaimTemplates:
+volumeClaimTemplates:
     metadata:
-      name: data 
+        name: data 
     spec:
-      accessModes:
-        - ReadWriteOnce
-      storageClassName: standard
-      resources:
-        requests:
-          storage: 1Gi
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: standard
+        resources:
+          requests:
+            storage: 1Gi
         
