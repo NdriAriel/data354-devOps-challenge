@@ -61,11 +61,14 @@ Before you begin, ensure you have met the following requirements:
   we generated two Helm chart each one of our apps (**app** and **db** )
   ```bash
   #create helm chart for db manifest
-  helm create db ./ --namespace=db
+  helm create db  --namespace=db
 
   #create helm chart for app manifest
-  helm create app ./ --namespace=app
+  helm create app  --namespace=app
   ```
+![appchart](images/imageapp.png) 
+![dbchart](images/imagedb.png)
+![codetree](images/imagetree.png) 
 
 ## Getting Started 
 
