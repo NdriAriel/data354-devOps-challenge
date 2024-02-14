@@ -59,18 +59,33 @@ Before you begin, ensure you have met the following requirements:
 
   In order to build a shareable  and scalable yaml file code we adopted Helm, a package manager for kubernetes project.
   we generated two Helm chart each one of our apps (**app** and **db** )
+
   ```bash
   #create helm chart for db manifest
-  helm create db  --namespace=db
+  helm create db --namespace=db
 
   #create helm chart for app manifest
-  helm create app  --namespace=app
+  helm create app --namespace=app
   ```
-![appchart](images/imageapp.png) 
-![dbchart](images/imagedb.png)
-![codetree](images/imagetree.png) 
 
-## Getting Started 
+ **output**
+ app chart creating
+![appchart](images/imageapp.png)
+ db chart creating
+![dbchart](images/imagedb.png)
+
+default helm chart code structure
+![codetree](images/imagetree.png)
+
+1. ### crating secret to pull contianer image from private repository  
+
+   ```bash
+   kubectl create secret docker-registry app-secret --docker-username=<yourUsername> --docker-password=<yourPassword> --docker-server=https://<serverDomain> --namespace=app
+ 
+   ```
+![secret](images/image-10.png)
+
+## Getting Started
 
 To get a local development environment up and running, follow these steps:
 
@@ -81,19 +96,3 @@ To get a local development environment up and running, follow these steps:
    ```bash
    git clone https://github.com/NdriAriel/data354-devOps-challenge.git
    cd data354-devOps-challenge
-
-![apiResponse](images/image.png)
-
-![Alt text](images/image-1.png)
-
-![Alt text](images/image-2.png)
-
-![Alt text](images/image-4.png)
-
-![Alt text](images/image-5.png)
-
-![Alt text](images/image-6.png)
-
-![Alt text](images/image-9.png)
-
-![Alt text](images/image-10.png)
