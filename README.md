@@ -89,8 +89,23 @@ default helm chart code structure
 
 ![secret](images/image-10.png)
 
+2. method used to update **/app/data/mail.txt** file inside the container
+   We mounted a volume from the host machine to the container virtual machine by creating a kubernetes configMap component in the app chart. here the sample ofe code used.
+   <p>
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: email-config
+      namespace: {{.Values.namespace}}
+    data:
+      {{ (tpl (.Files.Glob "secrets/mail.txt").AsConfig . ) | indent 2 }}
+
+</p>
+   
+
 We updated the default helm chart in both app folder and db folder and deployed the manifests using:
-```bash 
+
+```bash
 #from the root directory of our repository we run. 
 
 #deploying db statefulset with its service component 
@@ -101,21 +116,28 @@ helm install db ./db --namespace=db
 helm install app ./app --namespace=app
 
 ```
+
 ### **outputs**
+
 ![app deployed](images/imageapd.png)
 ![db deployed](images/imaged.png)
 
-list all charts in app namespace 
+list all charts in app namespace
+
 ```bash
 helm list --namespace=app
 ```
+
 ![appList](images/imageapplist.png)
 
 list all charts in db namespace
+
 ```bash
 helm list --namespace=db
 ```
+
  ![dbList](images/imagedblist.png)
+
 ## Getting Started
 
 To get a local development environment up and running, follow these steps:
