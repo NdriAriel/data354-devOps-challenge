@@ -29,7 +29,7 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
       imagePullSecrets:
-          - name: app-secr
+          - name: {{ .Release.Name }}-auth 
       containers: 
         - name: {{ .Release.Name }}-test-container
           image: {{ .Values.image.repository }}

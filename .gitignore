@@ -6,6 +6,9 @@ mini*
 .notebook
 .DS_Store
 # Common VCS dirs
+db/templates/tests*.yaml
+app/templates/tests*.yaml
+
 *.sh
 *log*.txt
 sec.json

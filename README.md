@@ -224,3 +224,6 @@ To run the cluster localy from your computer you should follow these steps:
   ```
 
   after that you should be able to request the app from <http://data354.app.local>
+
+## minikube dashboard ui screenshots
+

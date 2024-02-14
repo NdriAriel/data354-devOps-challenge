@@ -2,7 +2,7 @@
 replicaCount: 1
 image:
   repository: postgres
-  pullPolicy: Always #IfNotPresent
+  pullPolicy: IfNotPresent
   tag: "14-alpine"
 
 enviromentVariables:
