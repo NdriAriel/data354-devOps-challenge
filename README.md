@@ -151,11 +151,11 @@ helm list --namespace=db
 ```
 
 ![Apptest](images/imageapptest.png)
-You can access the app through the generate url.
+we can access the app through the generate url <http://127.0.0.1:42633>.
 
 #### method 2:  invoking the service through an ingress component of the app-test pod using minikube
 
- You should append 127.0.0.1 data354.app.local in your /etc/hosts file from your host machine.
+ We appended 127.0.0.1 data354.app.local in your /etc/hosts file from your host machine.
  the location of that file on windows machine is as shown in the picture :
 ![location](images/imagelocation.png)
 
