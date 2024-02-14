@@ -30,7 +30,7 @@ Before you begin, ensure you have met the following requirements:
 
 ## Results
 
- 1. ### Creating kubernets cluster from local environment.
+1. ### Creating kubernets cluster from local environment
   
   In order to deploy a local kubernetes cluster we use minikube which a developer friendly tool to build and deploy  local Kubernetes cluster. The command below sets up a local Kubernetes cluster on macOS, Linux, and Windows.
   
@@ -56,8 +56,10 @@ Before you begin, ensure you have met the following requirements:
 ![db](images/image-9.png)
 
 3. ### app-test and deployment using respectively Deployment and Statefulset
-   
-   
+
+  In order to build a shareable  and scalable yaml file code we adopt Helm, one the famous kubernetes package manager.
+  we generated two Helm chart each one of our apps (**app** and **db** )
+
 ## Getting Started
 
 To get a local development environment up and running, follow these steps:
