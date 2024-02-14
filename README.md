@@ -92,7 +92,7 @@ default helm chart code structure
 2. ### method used to update **/app/data/mail.txt** file inside the container
 
    We mounted a volume from the host machine to the container virtual machine by creating a kubernetes configMap component in the app chart. here the sample code used.
-   <code style={background:'black'}>
+   <code>
    #app/templates/email-config-map.yaml
    #the file /secrets/mail.txt contains my email address
     apiVersion: v1
