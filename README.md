@@ -178,7 +178,7 @@ We can now access the app through the url : <http://data354.app.local>
 
 ## Getting Started
 
-To get a local development environment up and running, follow these steps:
+To run the cluster localy from your computer you should follow these steps:
 
 ### Installation
 
@@ -187,3 +187,18 @@ To get a local development environment up and running, follow these steps:
    ```bash
    git clone https://github.com/NdriAriel/data354-devOps-challenge.git
    cd data354-devOps-challenge
+   ```
+
+2. start your minikube cluster
+
+   ```bash
+   minikube start
+   ```
+
+3. create **db** and **app** namespaces
+
+ ```bash
+ kubectl create namespace db
+ kubectl create namespace app
+
+ ```
